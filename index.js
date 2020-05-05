@@ -1,4 +1,3 @@
-const {readFileSync} =  require('fs');
 const https = require('https');
 //theres a file named token like:
 /*
@@ -6,10 +5,8 @@ BotName
 BotUserName
 BotToken
 */
-
-const {token, key, cert, ca} = require('./certificados/get');
-if (!key || !cert || !ca) { console.log("Certificados incorrectos", !!key, !!cert, !!ca); process.exit(1); }
-var CERTIFICADOS={ key, cert, ca };
+const {getCertificates}=require('./certificados/getCertificates');
+const {CERTIFICADOS, tokenTelegram}=getCertificates()
 //https://api.telegram.org/bot<token>/METHOD_NAME
 botMethod={
     me:"/getMe",
@@ -31,7 +28,7 @@ function botGet(botToken,METHOD_NAME="",cb){
     });
 }
 
-botGet(token[2],botMethod.me,console.log)
+botGet(tokenTelegram,botMethod.me,console.log)
 
 /*
 If you'd like to make sure that the Webhook request comes from Telegram, we recommend using a
@@ -40,7 +37,7 @@ token, you can be pretty sure it’s us.
 */
 
 const httpsServer= https.createServer(CERTIFICADOS, recibe);
-httpsServer.listen (PUERTOSSL); // 443
+httpsServer.listen (PUERTOSSL=5001);
 function recibe(){
     var ip = request.connection.remoteAddress;
 	var host = request.headers.host; 
