@@ -1,5 +1,5 @@
 # telegrambot
 
-First of all lets go our telegram client and create our bot (https://core.telegram.org/bots#6-botfather)
-and get the token to access the HTTP API
+A simple introduction of how telegram bots work using just vanilla node js
+https://core.telegram.org/bots
 

@@ -1,0 +1,1 @@
+{"279542":{"id":279542,"is_bot":false,"first_name":"Edoldin","username":"Edoldin","language_code":"es","init":true,"start":true,"code":"0000","link":true,"notificaciones":true},"373877285":{"id":373877285,"is_bot":false,"first_name":"Pedro María","last_name":"Navarro Riu","language_code":"es","start":true,"code":"0000","link":true,"notificaciones":true}}
